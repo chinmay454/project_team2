@@ -1,0 +1,36 @@
+# Additional utilities to make maintenance easier
+
+# Optional: Export scores to a text file
+    def export_scores(self):
+        conn = sqlite3.connect("quiz_app.db")
+        cursor = conn.cursor()
+        cursor.execute("SELECT score FROM results WHERE username=?", (self.username,))
+        rows = cursor.fetchall()
+        conn.close()
+
+        with open(f"{self.username}_scores.txt", "w") as f:
+            for i, r in enumerate(rows, 1):
+                f.write(f"Attempt {i}: {r[0]}/5\n")
+        messagebox.showinfo("Exported", f"Scores saved to {self.username}_scores.txt")
+
+# Optional: Admin view (not linked but extendable)
+def admin_view():
+    conn = sqlite3.connect("quiz_app.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT username, AVG(score) FROM results GROUP BY username")
+    data = cursor.fetchall()
+    conn.close()
+    print("User Averages:")
+    for user, avg in data:
+        print(f"{user}: {avg:.2f}")
+
+# Admin utility (CLI)
+if __name__ == "__main__":
+    init_db()
+    root = tk.Tk()
+    app = QuizApp(root)
+    root.geometry("300x400")
+    root.mainloop()
+    # Uncomment to test admin view in CLI after GUI closes
+    # admin_view()
+
