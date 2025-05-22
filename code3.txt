@@ -1,0 +1,32 @@
+# Optional UI enhancements and detailed result feedback
+# (To be placed inside show_result_screen for richer output)
+
+# Example of enhancing result screen (replace old result section in show_result_screen if desired)
+    def show_result_screen(self):
+        self.clear_window()
+        tk.Label(self.root, text="Quiz Summary", font=("Arial", 18)).pack(pady=10)
+        tk.Label(self.root, text=f"Hello, {self.username}!").pack()
+        tk.Label(self.root, text=f"You scored {self.score} out of 5").pack(pady=5)
+
+        if self.score == 5:
+            feedback = "Excellent! You're a quiz master!"
+        elif self.score >= 3:
+            feedback = "Good job! Keep practicing."
+        else:
+            feedback = "Better luck next time."
+
+        tk.Label(self.root, text=feedback, fg="green").pack(pady=5)
+        self.save_result()
+        tk.Button(self.root, text="Check History", command=self.view_past_scores).pack(pady=5)
+        tk.Button(self.root, text="Exit", command=self.root.quit).pack(pady=5)
+
+# Consider also adding a reset_score function
+    def reset_score(self):
+        conn = sqlite3.connect("quiz_app.db")
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM results WHERE username=?", (self.username,))
+        conn.commit()
+        conn.close()
+        messagebox.showinfo("Reset", "All scores cleared.")
+        self.view_past_scores()
+
