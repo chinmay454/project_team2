@@ -38,4 +38,9 @@ Make sure Python is installed on your system.
    ```bash
    git clone https://github.com/yourusername/quiz-app.git
    cd quiz-app
+Usage
+Launch the app using the terminal.
 
+Answer each question by typing the letter corresponding to your choice (e.g., A, B, C, D).
+
+At the end, your score will be displayed.
