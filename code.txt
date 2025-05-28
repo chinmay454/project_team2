@@ -39,9 +39,6 @@ Make sure Python is installed on your system.
    git clone https://github.com/yourusername/quiz-app.git
    cd quiz-app
 Run the script:
-
-bash
-Copy code
 python quiz_app.py
 ▶️ Usage
 Launch the app using the terminal.
@@ -51,9 +48,13 @@ Answer each question by typing the letter corresponding to your choice (e.g., A,
 At the end, your score will be displayed.
 
 📂 Project Structure
+
+graphql
+
 Project Structure
 graphql
 Copy code
+
 quiz-app/
 │
 ├── quiz_app.py         # Main Python file
@@ -64,6 +65,7 @@ quiz-app/
 Example Question Format
 python
 Copy code
+
 questions = [
     {
         "question": "What is the capital of France?",
