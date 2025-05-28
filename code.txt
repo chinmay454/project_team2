@@ -44,3 +44,12 @@ Launch the app using the terminal.
 Answer each question by typing the letter corresponding to your choice (e.g., A, B, C, D).
 
 At the end, your score will be displayed.
+Project Structure
+graphql
+Copy code
+quiz-app/
+│
+├── quiz_app.py         # Main Python file
+├── questions.json      # (Optional) Questions in JSON format
+├── README.md           # This file
+└── requirements.txt    # (If any libraries are used)
