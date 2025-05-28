@@ -38,12 +38,20 @@ Make sure Python is installed on your system.
    ```bash
    git clone https://github.com/yourusername/quiz-app.git
    cd quiz-app
+Run the script:
+
+bash
+Copy code
+python quiz_app.py
+▶️ Usage
 Usage
 Launch the app using the terminal.
 
 Answer each question by typing the letter corresponding to your choice (e.g., A, B, C, D).
 
 At the end, your score will be displayed.
+
+📂 Project Structure
 Project Structure
 graphql
 Copy code
@@ -64,7 +72,7 @@ questions = [
         "answer": "A"
     }
 ]
-Contributing
+🤝 Contributing
 Want to add more features or questions? Feel free to contribute:
 
 Fork the repo
