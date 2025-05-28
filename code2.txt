@@ -1,0 +1,33 @@
+    def view_past_scores(self):
+        self.clear_window()
+        tk.Label(self.root, text=f"{self.username}'s Score History", font=("Arial", 16)).pack(pady=10)
+        conn = sqlite3.connect("quiz_app.db")
+        cursor = conn.cursor()
+        cursor.execute("SELECT score FROM results WHERE username=?", (self.username,))
+        rows = cursor.fetchall()
+        conn.close()
+        if not rows:
+            tk.Label(self.root, text="No scores found.").pack()
+        else:
+            scores = [r[0] for r in rows]
+            for idx, score in enumerate(scores, 1):
+                tk.Label(self.root, text=f"Attempt {idx}: {score}/5").pack()
+            avg = sum(scores) / len(scores)
+            tk.Label(self.root, text=f"Average Score: {avg:.2f}/5", fg="blue").pack(pady=5)
+
+        tk.Button(self.root, text="Back to Results", command=self.show_result_screen).pack(pady=5)
+        tk.Button(self.root, text="Logout", command=self.logout).pack(pady=5)
+
+    def logout(self):
+        self.username = None
+        self.score = 0
+        self.create_login_screen()
+
+# Initialization logic
+if __name__ == "__main__":
+    init_db()
+    root = tk.Tk()
+    app = QuizApp(root)
+    root.geometry("300x400")
+    root.mainloop()
+

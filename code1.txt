@@ -1,0 +1,38 @@
+    def register(self):
+        username = self.entry_username.get()
+        password = self.entry_password.get()
+        if not username or not password:
+            messagebox.showwarning("Input Error", "Please enter both username and password.")
+            return
+        conn = sqlite3.connect("quiz_app.db")
+        cursor = conn.cursor()
+        try:
+            cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
+            conn.commit()
+            messagebox.showinfo("Success", "Registration successful!")
+        except sqlite3.IntegrityError:
+            messagebox.showerror("Error", "Username already exists.")
+        finally:
+            conn.close()
+
+    def launch_quiz(self):
+        # Placeholder for actual quiz; for now, just simulate score and go to result
+        self.score = 3  # Example score
+        self.show_result_screen()
+
+    def show_result_screen(self):
+        self.clear_window()
+        tk.Label(self.root, text="Quiz Completed!", font=("Arial", 18)).pack(pady=10)
+        tk.Label(self.root, text=f"User: {self.username}").pack()
+        tk.Label(self.root, text=f"Score: {self.score}/5").pack()
+        self.save_result()
+        tk.Button(self.root, text="View Past Scores", command=self.view_past_scores).pack(pady=5)
+        tk.Button(self.root, text="Exit", command=self.root.quit).pack(pady=5)
+
+    def save_result(self):
+        conn = sqlite3.connect("quiz_app.db")
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO results (username, score) VALUES (?, ?)", (self.username, self.score))
+        conn.commit()
+        conn.close()
+

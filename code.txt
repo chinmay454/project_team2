@@ -1,7 +1,4 @@
-README for Quiz App – A Python-Based Quiz Game
-markdown
-Copy code
-# 🧠 Quiz App
+  # 🧠 Quiz App
 
 A simple and interactive terminal-based Quiz App built using Python. This application allows users to test their knowledge on various topics with multiple-choice questions.
 
@@ -47,6 +44,7 @@ bash
 Copy code
 python quiz_app.py
 ▶️ Usage
+Usage
 Launch the app using the terminal.
 
 Answer each question by typing the letter corresponding to your choice (e.g., A, B, C, D).
@@ -54,6 +52,7 @@ Answer each question by typing the letter corresponding to your choice (e.g., A,
 At the end, your score will be displayed.
 
 📂 Project Structure
+Project Structure
 graphql
 Copy code
 quiz-app/
@@ -62,7 +61,8 @@ quiz-app/
 ├── questions.json      # (Optional) Questions in JSON format
 ├── README.md           # This file
 └── requirements.txt    # (If any libraries are used)
-📝 Example Question Format
+
+Example Question Format
 python
 Copy code
 questions = [
