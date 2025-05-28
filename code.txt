@@ -64,3 +64,15 @@ questions = [
         "answer": "A"
     }
 ]
+Contributing
+Want to add more features or questions? Feel free to contribute:
+
+Fork the repo
+
+Create a new branch: git checkout -b feature-name
+
+Make your changes and commit: git commit -m 'Add feature'
+
+Push and create a Pull Request
+
+
