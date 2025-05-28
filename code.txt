@@ -53,3 +53,14 @@ quiz-app/
 ├── questions.json      # (Optional) Questions in JSON format
 ├── README.md           # This file
 └── requirements.txt    # (If any libraries are used)
+
+Example Question Format
+python
+Copy code
+questions = [
+    {
+        "question": "What is the capital of France?",
+        "options": ["A. Paris", "B. Rome", "C. Madrid", "D. Berlin"],
+        "answer": "A"
+    }
+]
