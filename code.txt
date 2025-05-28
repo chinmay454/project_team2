@@ -1,6 +1,5 @@
-README for Quiz App – A Python-Based Quiz Game
-markdown
-# 🧠 Quiz App
+
+  # 🧠 Quiz App
 
 A simple and interactive terminal-based Quiz App built using Python. This application allows users to test their knowledge on various topics with multiple-choice questions.
 
@@ -51,14 +50,20 @@ At the end, your score will be displayed.
 
 📂 Project Structure
 graphql
+
+Project Structure
+graphql
 quiz-app/
 │
 ├── quiz_app.py         # Main Python file
 ├── questions.json      # (Optional) Questions in JSON format
 ├── README.md           # This file
 └── requirements.txt    # (If any libraries are used)
-📝 Example Question Format
+
+Example Question Format
 python
+Copy code
+
 questions = [
     {
         "question": "What is the capital of France?",
