@@ -1,3 +1,4 @@
+
   # 🧠 Quiz App
 
 A simple and interactive terminal-based Quiz App built using Python. This application allows users to test their knowledge on various topics with multiple-choice questions.
@@ -48,13 +49,10 @@ Answer each question by typing the letter corresponding to your choice (e.g., A,
 At the end, your score will be displayed.
 
 📂 Project Structure
-
 graphql
 
 Project Structure
 graphql
-Copy code
-
 quiz-app/
 │
 ├── quiz_app.py         # Main Python file
