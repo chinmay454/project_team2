@@ -44,7 +44,6 @@ bash
 Copy code
 python quiz_app.py
 ▶️ Usage
-Usage
 Launch the app using the terminal.
 
 Answer each question by typing the letter corresponding to your choice (e.g., A, B, C, D).
