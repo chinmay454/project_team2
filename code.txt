@@ -1,4 +1,4 @@
-
+readme file
   # 🧠 Quiz App
 
 A simple and interactive terminal-based Quiz App built using Python. This application allows users to test their knowledge on various topics with multiple-choice questions.
