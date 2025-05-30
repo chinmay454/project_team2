@@ -1,4 +1,4 @@
-    def register(self):
+shoaib ,malik    def register(self):
         username = self.entry_username.get()
         password = self.entry_password.get()
         if not username or not password:
